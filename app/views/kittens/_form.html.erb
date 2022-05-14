@@ -1,0 +1,8 @@
+<%= form_with model: @kitten do |kitten|%>
+  Kitten's Name: <%= kitten.text_field :name, required: true%><br>
+  Youngness(age):  <%= kitten.number_field :age, required: true %><br>
+  Cuteness(#1-10):  <%= kitten.number_field :cuteness, required: true %><br>
+  Softness(#1-10): <%= kitten.number_field :softness , required: true %><br><br>
+
+  <%= kitten.submit "Save Kitten"%>
+<% end %>

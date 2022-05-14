@@ -1,0 +1,16 @@
+<%= render "flash"%>
+
+<h1>All Kittens All The Time</h1>
+<ul>
+  <% @kittens.each do |kitten| %>
+    <li> 
+      Name: <%= link_to  kitten.name, kitten %> <br>
+      Age: <%= kitten.age %> <br>
+      Cuteness: <%= kitten.cuteness %> <br>
+      Softness: <%= kitten.softness %> <br>
+      <%= link_to "Delete me?", kitten_path(kitten), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this kitten? This cannot be undone" } %> <br><br> 
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new kitten", "/kittens/new" %>
